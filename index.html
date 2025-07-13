@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-main: #f5f0e6;
+      --bg-section: #ede1d1;
+      --text-main: #3e2c1c;
+      --accent: #a47148;
+      --highlight: #d2b48c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    header {
+      background-color: var(--bg-section);
+      padding: 2.5rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #5a4633;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      transition: all 0.6s ease-in-out;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .gallery, .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img, .videos video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(60, 40, 20, 0.2);
+      transition: transform 0.3s ease;
+      background-color: #fff;
+    }
+
+    .gallery img:hover, .videos video:hover {
+      transform: scale(1.03);
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+      color: #5a4633;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .socials a:hover {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: var(--bg-section);
+      margin-top: 3rem;
+      color: #5a4633;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dian Firmansyah</h1>
+    <p>Freelance Fotografer & Videografer</p>
+  </header>
+
+  <section class="section fade-in">
+    <h2>Galeri Foto</h2>
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Foto 1" />
+      <img src="foto2.jpg" alt="Foto 2" />
+      <img src="foto3.jpg" alt="Foto 3" />
+	  <img src="foto4.jpg" alt="Foto 4" />
+	  <img src="foto5.jpg" alt="Foto 5" />
+	  <img src="foto6.jpg" alt="Foto 6" />
+    </div>
+  </section>
+
+  <section class="section fade-in">
+    <h2>Hasil Video</h2>
+    <div class="videos">
+      <video controls>
+        <source src="video1.mp4" type="video/mp4" />
+      </video>
+      <video controls>
+        <source src="video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <section class="section fade-in contact">
+    <h2>Hubungi Saya</h2>
+    <p>Email: dnfirmnsh@egmail.com.com</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/ma.mooo_/" target="_blank">📷 Instagram</a>
+      <a href="https://www.tiktok.com/@choco.chippsss_" target="_blank">🎶 TikTok</a>
+      <a href="https://wa.me/6283841884068" target="_blank">💬 WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dian Firmansyah. Rustic Moments, Real Emotions.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
